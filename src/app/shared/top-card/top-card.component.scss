@@ -1,13 +1,18 @@
 .card {
-    width: 18rem;
+    width: auto;
 }
 .main-card-body{
     display: flex;
+    margin-top: 60px;
 }
 #card{
     margin-left: unset !important;
+    width: 100%;
 }
 .card-title{
     color: blue;
     font-weight: 700;
+}
+.fa-car{
+    font-size: 30px;
 }
