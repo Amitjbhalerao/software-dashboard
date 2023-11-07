@@ -1,4 +1,7 @@
 # SoftwareDashboard
+![software_dashboard](https://github.com/Amitjbhalerao/softwaredashboard.github.io/assets/98278814/211346a9-ccd8-435e-97a2-a6c782dcd9dc)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
