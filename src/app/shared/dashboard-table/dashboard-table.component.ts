@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class DashboardTableComponent {
   @Input() recent_orders:any;
+  orderDetail:any;
+  
+  getOrderDetails(orderDetail:any){
+  this.orderDetail=orderDetail;
+  }
 }

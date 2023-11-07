@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ChartComponent } from "ng-apexcharts";
 import {ApexNonAxisChartSeries,ApexResponsive,ApexChart} from "ng-apexcharts";
+import { WebServicesService } from 'src/app/services/web-services.service';
 
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
@@ -17,30 +18,9 @@ export class PieChartComponent {
   @ViewChild("chart") chart: any;
   public chartOptions: any;
 
-  constructor() {
-    this.chartOptions = {
-      series: [44, 55, 13],
-      chart: {
-        type: "donut"
-      },
-      title: {
-        text: 'Top Products',
-        align: 'left',
-      },
-      labels: ["Men", "Electronics", "Women"],
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 100
-            },
-            legend: {
-              position: "bottom"
-            }
-          }
-        }
-      ]
-    };
+  constructor(private service:WebServicesService) {
+  }
+  ngOnInit(){
+    this.chartOptions =this.service.getChartData('pieChart');
   }
 }

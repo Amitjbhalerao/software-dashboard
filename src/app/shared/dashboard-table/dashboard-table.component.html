@@ -23,10 +23,31 @@
         <td><button type="button" class="btn" [ngClass]="{'btn-success':(orderDetails.status=='Paid'),'btn-secondary':(orderDetails.status=='Pending'),'btn-danger':(orderDetails.status=='Failed')}">{{orderDetails.status}}</button></td>
         <td>#{{orderDetails.tracking_no}}</td>
         <td>{{orderDetails.shipping ? "Yes":"No"}}</td>
-        <td><span>X</span></td>
+        <td id="orderdetailsModel" (click)="getOrderDetails(orderDetails)" data-bs-toggle="modal" data-bs-target="#orderDetailModel"><span>X</span></td>
       </tr>
     </tbody>
   </table>
 </div>
 
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade"  id="orderDetailModel" tabindex="-1" aria-labelledby="orderDetailLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"  *ngIf="orderDetail">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="orderDetailLabel">Order Detail</h1>
+        <button type="button" class="btn-close" (click)="orderDetail==false" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Customer :-  {{orderDetail.name}}</h4>
+        <h4>Product :- {{orderDetail.product}}</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="orderDetail==false" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
